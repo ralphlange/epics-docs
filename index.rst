@@ -76,7 +76,7 @@ You may also directly use related links to see documents which match you the mos
 
    getting-started/installation
    getting-started/installation-linux
-   getting-started/installation-windows
+   getting-started/installation-windows.md
    getting-started/linux-packages.rst
    getting-started/cross-compile-to-old-x86-linux
    getting-started/creating-ioc

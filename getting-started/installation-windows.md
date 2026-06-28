@@ -6,6 +6,7 @@
 ## Introduction
 
 ### EPICS
+
 EPICS is a toolkit for building control systems.
 You can get the basic ideas from the EPICS web site at
 <https://epics-controls.org/about-epics/>.
@@ -18,6 +19,7 @@ and can connect to it from a command line shell.
 Other How-Tos will guide you further.
 
 ### EPICS on Windows
+
 While it is not its primary or most widely used target platform,
 the EPICS low-level libraries have good and well-tested implementations
 on Windows.
@@ -29,6 +31,7 @@ Understanding these choices and their implications before making decisions
 will help you to avoid mistakes and spend time fixing them.
 
 ### Cygwin
+
 As mentioned before, EPICS Base has its own native Windows implementation
 of all necessary low level services.
 There is no need to go through the Posix emulation layer
@@ -40,6 +43,7 @@ vendor-provided library for Cygwin, you should prefer a native Windows build.
 Also, Cygwin is deprecated as a target platform for EPICS.
 
 ### Build Time
+
 The time needed to build EPICS Base depends on a few factors,
 including the speed of the processor and file system, the compiler used,
 the build mode (DLL or static), possibly debugging options and others.
@@ -49,12 +53,14 @@ between 15 and 30 minutes, the 3.15 branch can be built in 6 to 10 minutes.
 Use `make -j<n>` to make use of multiple CPU cores.
 
 ## Required Tools
+
 * C++ compiler: either MinGW (GCC) or Microsoft's Visual Studio compiler (VS)
 * archive unpacker (7zip or similar)
 * GNU Make (4.x)
 * Perl
 
 ## Choice 1: Compiler
+
 You will need a C++ compiler with its supporting C++ standard libraries.
 Two major compilers are supported by EPICS and its build system:
 
@@ -92,6 +98,7 @@ this will most likely determine which compiler you need to use.
 ## Choice 2: Build Environment and Tool Installation
 
 ### MSYS2
+
 [MSYS2](https://www.msys2.org/) (available for Windows 7 and up)
 is a pretty complete "feels like Linux" environment.
 It includes a Linux style package manager (`pacman`),
@@ -115,6 +122,7 @@ as well as using MinGW,
 selected by the EPICS_HOST_ARCH environment variable setting.
 
 ### Chocolatey
+
 [Chocolatey](https://chocolatey.org/) is a package manager for Windows
 with a comfortable GUI, making it easy to install and update software packages
 (including the tools needed for building EPICS).
@@ -124,6 +132,7 @@ installers of software.
 Using Chocolatey needs Administrator rights.
 
 ### Windows Installers
+
 You can also install the required tools independently,
 directly using their native Windows installers.
 
@@ -138,6 +147,7 @@ Otherwise, there is a Windows binary provided on the EPICS web site.
 Native Windows installers often need Administrator rights.
 
 ## Choice 3: Static or DLL Build / Deployment
+
 If you configure the EPICS build system to build your IOCs dynamically
 (i.e., using DLLs), they need the DLLs they have been linked against
 to be present on the target system,
@@ -165,6 +175,7 @@ Or you can just provide one option globally for your installation,
 which all installations will have to use.
 
 ## Windows Path Names
+
 Make based builds do not work properly when there are space characters
 or parentheses in the paths that are part of the build
 (including the path where the `make` application resides
@@ -176,11 +187,13 @@ for all path components with those characters in any path settings
 and/or your workspace directory.
 
 ## Put Tools in the PATH
+
 No matter which shell and environment you use, the tools (perl, make)
 should end up being in the `%PATH%`,
 so that they are found when called just by their name.
 
 ## Install and Build
+
 Depending on your set of choices, the instructions for building EPICS Base,
 building IOC applications and running them are different.
 The following detailed instructions focus on two common sets of choices:

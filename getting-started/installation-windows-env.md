@@ -15,6 +15,7 @@ Note that *running* IOCs only needs the Path to be set correctly
 and benefits from EPICS_BASE being set.
 
 ## Required settings for Path
+
 The way you are building your binaries determines which paths
 have to be added to the Path variable.
 
@@ -43,6 +44,7 @@ have to be added to the Path variable.
   the latter under the stated condition.
 
 ## Set environment using a batch or script from EPICS Base
+
 EPICS Base provides script and batch files to help setting the environment
 for running EPICS commands and doing EPICS builds.
 
@@ -59,6 +61,7 @@ the `unix.sh` shell script from any bash shell prompt
 before doing EPICS commands or builds.
 
 ## Set environment using the Windows settings
+
 This method requires less effort and does not need something special
 to be executed or called from the command prompt.
 

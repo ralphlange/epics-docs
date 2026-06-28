@@ -1,15 +1,18 @@
 # Installation using plain Windows and the Visual Studio compilers
 
 ## Install tools
+
 There are two reasonable options.
 
 ### Using Chocolatey
+
 Go to the [Chocolatey website](https://chocolatey.org/) and follow
 their instructions to download and install the package manager.
 
 Using Chocolatey, install Strawberry Perl and Gnu Make.
 
 ### Manually
+
 Install Strawberry Perl or ActivePerl using the Windows installers
 available on their download pages.
 
@@ -20,6 +23,7 @@ Unzip it into a location (path must not contain spaces or parentheses)
 and add it to the system environment.
 
 ### Put tools in the Path
+
 Make sure the tools' locations are added to the system environment
 variable Path.
 Inside a shell (command prompt) they must be callable
@@ -47,6 +51,7 @@ There is NO WARRANTY, to the extent permitted by law.
 ```
 
 ## Install the compiler
+
 Download the Visual Studio Installer and install
 (the community edition is free).
 Make sure you enable the Programming Languages / C++ Development options.

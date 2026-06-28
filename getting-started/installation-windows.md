@@ -83,6 +83,9 @@ Both compiler toolchains can create shared libraries (DLLs) and static libraries
 On a 64bit system, both can create 64bit output (runs on 64bit systems)
 and 32bit output (runs on both 32bit and 64bit systems).
 
+:::{important}
+**Binary Compatibility**
+
 When using C++, libraries are not compatible between those two
 compilers toolchains.
 When generating a binary (e.g., an IOC),
@@ -94,6 +97,9 @@ generated with the other compiler, because its name is different there.)
 
 If you need to link against vendor-provided binary C++ libraries,
 this will most likely determine which compiler you need to use.
+Many hardware vendors only provide libraries for the Microsoft Visual Studio
+compiler (MSVC).
+:::
 
 ## Choice 2: Build Environment and Tool Installation
 
@@ -146,6 +152,16 @@ Otherwise, there is a Windows binary provided on the EPICS web site.
 
 Native Windows installers often need Administrator rights.
 
+:::{tip}
+**Which one should I choose?**
+
+* **Choose MSYS2/MinGW** if you want an easier, Linux-like setup experience
+  and don't have existing requirements for Microsoft's compiler.
+* **Choose Visual Studio** if you are required to use vendor-supplied
+  binary libraries that only support MSVC, or if you are already
+  deeply integrated into the Microsoft development ecosystem.
+:::
+
 ## Choice 3: Static or DLL Build / Deployment
 
 If you configure the EPICS build system to build your IOCs dynamically
@@ -165,7 +181,10 @@ The DLL is in memory once and used concurrently by all IOC binaries,
 while the statically linked binaries each have their own copy
 of the library in memory.
 
-*Note:* When using the Visual Studio compilers,
+:::{warning}
+**Visual Studio and Build Types**
+
+When using the Visual Studio compilers,
 compilation uses different flags for building DLLs and building static libraries.
 You can't generate static and shared libraries in the same build.
 You can provide both options in your EPICS installation by running both builds
@@ -173,6 +192,7 @@ in sequence (with `make clean` inbetween),
 so that your applications can decide between static or DLL build.
 Or you can just provide one option globally for your installation,
 which all installations will have to use.
+:::
 
 ## Windows Path Names
 
@@ -181,10 +201,12 @@ or parentheses in the paths that are part of the build
 (including the path where the `make` application resides
 and the path of the workspace).
 
+:::{important}
 If you cannot avoid paths with such characters,
 use the Windows short path (can be displayed with `dir /x`)
 for all path components with those characters in any path settings
 and/or your workspace directory.
+:::
 
 ## Put Tools in the PATH
 
